@@ -11,7 +11,7 @@ export default function HeaderComponent() {
   }
 
   return (
-    <header className="flex justify-between items-center pt-6">
+    <header className="flex justify-between items-center pt-6 pb-10">
       <h1 className="text-3xl font-bold uppercase tracking-[.3em]">Todo</h1>
       <button className="cursor-pointer" onClick={handleClick}>
         {isDark ? (
