@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Josefin_Sans } from "next/font/google"
 import "./globals.css"
 import FooterComponent from "./components/footer"
 import HeaderComponent from "./components/header"
+import Image from "next/image"
 
 const josefinSans = Josefin_Sans({
   weight: ["400", "700"],
@@ -31,11 +32,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${josefinSans.className} antialiased`}>
+      <body className={`${josefinSans.className} antialiased relative`}>
         <div className="p-6">
           <HeaderComponent />
           {children}
           <FooterComponent />
+        </div>
+        <div className="absolute -z-50 top-0 w-full">
+          <Image
+            className="w-full object-cover object-center"
+            src="/images/bg-mobile-dark.jpg"
+            alt=""
+            width={375}
+            height={200}
+          />
         </div>
       </body>
     </html>
